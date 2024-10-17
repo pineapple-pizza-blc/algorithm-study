@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class softeer_순서대로방문하기 {
+public class Softeer_조수연_순서대로방문하기 {
 
     //실행 시간 70 ms 메모리 10.23 MB
     static int dx[] = {-1, 0, 1, 0}, dy[] = {0, 1, 0, -1}, N, M, ans, arr[][];
