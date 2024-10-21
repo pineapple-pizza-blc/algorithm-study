@@ -1,8 +1,9 @@
 import java.io.*;
 import java.util.*;
 
+//실행 시간: 117 ms 
+//메모리: 14.89 MB
 public class Main {
-
 	static final int[] dx = {-1, 0, 1, 0};
 	static final int[] dy = {0, 1, 0, -1};
 
