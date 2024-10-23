@@ -1,69 +1,70 @@
 import java.io.*;
 import java.util.*;
 
-public class Softeer_조수연_교차로 {
+public class Softeer_조수연_교차로2 {
+
+    static class Output extends Car {
+
+        int outputIdx;
+        int outTime;
+    
+
+        Output(int time, char doro) {
+            super(time, doro);
+            this.outputIdx = idx++;
+        }
+
+        Output(Car car) {
+            super(car.time, car.doro);
+            this.outputIdx = idx++;
+        }
+    
+        @Override
+        public String toString() {
+            return "OutputIdx: " + outputIdx + ", OutTime: " + outTime +
+                   ", CarTime: " + time + ", Doro: " + doro;
+        }
+    }
+
     static class Car {
         int time;
         char doro;
-
+        
         Car(int time, char doro) {
             this.time = time;
             this.doro = doro;
         }
     }
-    static PriorityQueue<Car> pq;
+
+    static int idx = 0;
+
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
+        int N = Integer.parseInt(bf.readLine());
+
+        Queue<Output> doros[] = new ArrayDeque[4];
+        for(int i=0;i<4;i++) {
+            doros[i] = new ArrayDeque<>();
+        }
+
         StringTokenizer st = new StringTokenizer(bf.readLine());
+        int time = Integer.parseInt(st.nextToken());
+        char doro = st.nextToken().charAt(0);
 
-        int N = Integer.parseInt(st.nextToken());
-        pq = new PriorityQueue<>(new Comparator<Car>() {
+        doros[doro-'A'].offer(new Output(time, doro));
 
-            @Override
-            public int compare(Car o1, Car o2) {
-                if(o1.time == o2.time) {
-                    return -1;
-                }
-
-                return o1.time - o2.time;
-            }
-            
-        });
-
-        for(int i=0;i<N;i++) {
+        for(int i=1;i<N;i++) {
             st = new StringTokenizer(bf.readLine());
-            int time = Integer.parseInt(st.nextToken());
-            char doro = st.nextToken().charAt(0);
-            pq.offer(new Car(time, doro));
-        }
+            Car car = new Car(Integer.parseInt(st.nextToken()), st.nextToken().charAt(0));
 
-        int time = 0;
-
-        while(!pq.isEmpty()) {
-            Car[] carlist = new Car[4];
-            carlist[0] = pq.poll();
-            int i = 1;
-
-            while(!pq.isEmpty() && pq.peek().time == carlist[0].time) {
-                carlist[i++] = pq.poll();
-            }
-
-            if(i==4) {
-                //남은거 다 -1출력하고 return
-            }
-
-            if(i==3) {
-                //차 3대
-            } else if(i==2) {
-                //차 2대
-            } else {
-                //차 1대
-                sb.append(carlist[0].time);
-            }
+            doros[car.doro-'A'].offer(new Output(car));
 
         }
 
-        
+        int cnt = 0;
+        while(cnt < idx) {
+            List<Output>
+        }
+
     }
 }
