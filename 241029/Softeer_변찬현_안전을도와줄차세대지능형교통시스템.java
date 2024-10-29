@@ -3,9 +3,9 @@ import java.util.*;
 
 /*
 실행 시간
-265 ms
+255 ms
 메모리
-25.88 MB
+28.16 MB
 */
 
 public class Softeer_변찬현_안전을도와줄차세대지능형교통시스템 {
@@ -13,20 +13,6 @@ public class Softeer_변찬현_안전을도와줄차세대지능형교통시스�
     static int[][][] map;
     static boolean[][] visited;
     static int[][] moves = {{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
-    static List<int[][]> signals = Arrays.asList(
-            new int[][]{{0, 1}, {0, 1}, {-1, 0}, {1, 0}},
-            new int[][]{{-1, 0}, {-1, 0}, {0, 1}, {0, -1}},
-            new int[][]{{0, -1}, {0, -1}, {-1, 0}, {1, 0}},
-            new int[][]{{1, 0}, {1, 0}, {0, 1}, {0, -1}},
-            new int[][]{{0, 1}, {0, 1}, {-1, 0}},
-            new int[][]{{-1, 0}, {-1, 0}, {0, -1}},
-            new int[][]{{0, -1}, {0, -1}, {1, 0}},
-            new int[][]{{1, 0}, {1, 0}, {0, 1}},
-            new int[][]{{0, 1}, {0, 1}, {1, 0}},
-            new int[][]{{-1, 0}, {-1, 0}, {0, 1}},
-            new int[][]{{0, -1}, {0, -1}, {-1, 0}},
-            new int[][]{{1, 0}, {1, 0}, {0, -1}}
-    );
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
