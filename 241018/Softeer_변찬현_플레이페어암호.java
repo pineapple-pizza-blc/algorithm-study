@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Softeer_플레이페어암호 {
+public class Softeer_변찬현_플레이페어암호 {
 
     public static String ans;
     public static char[][] map;
