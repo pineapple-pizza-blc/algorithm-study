@@ -1,6 +1,13 @@
 import java.io.*;
 import java.util.*;
 
+/*
+실행 시간
+129 ms
+메모리
+13.58 MB
+*/
+
 public class Softeer_변찬현_순서대로방문하기 {
 	static int[] dr = { -1, 1, 0, 0 };
 	static int[] dc = { 0, 0, -1, 1 };
