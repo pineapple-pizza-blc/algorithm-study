@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Softeer_로봇이지나간경로 {
+public class Softeer_변찬현_로봇이지나간경로 {
 
     static int H, W;
     static char[][] map;
