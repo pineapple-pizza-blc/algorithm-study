@@ -1,6 +1,13 @@
 import java.io.*;
 import java.util.*;
 
+/*
+실행 시간
+265 ms
+메모리
+25.88 MB
+*/
+
 public class Softeer_변찬현_안전을도와줄차세대지능형교통시스템 {
     static int N, T;
     static int[][][] map;
