@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Softeer_교차로 {
+public class Softeer_변찬현_교차로 {
 
     public static class Car {
         int index;
