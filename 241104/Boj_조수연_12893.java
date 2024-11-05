@@ -8,6 +8,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Boj_조수연_12893 {
+
     static int N, M;
     static boolean visited[], team[];
     static List<Integer> arr[];
@@ -69,3 +70,4 @@ public class Boj_조수연_12893 {
         return true;
     }
 }
+
