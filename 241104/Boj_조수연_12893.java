@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Baekjoon_조수연_12893 {
+public class Boj_조수연_12893 {
+
     static int N, M;
     static boolean visited[], team[];
     static List<Integer> arr[];
@@ -32,30 +33,41 @@ public class Baekjoon_조수연_12893 {
             arr[b].add(a);
         }
 
+        // 모든 정점에 대해 확인
         for(int i=0;i<N;i++) {
-            if(visited[i]) continue;
-
-            Queue<Integer> queue = new ArrayDeque<>();
-            visited[i] = true;
-
-            for(int j=0;j<arr[i].size();j++) {
-                queue.offer(arr[i].get(j));
-            }
-
-            while(!queue.isEmpty()) {
-                
+            if(!visited[i]) {
+                if(!bfs(i)) {
+                    System.out.println(0);
+                    return;
+                }
             }
         }
-
+        System.out.println(1);
     }
 
-    static void dfs(int num) {
-        boolean team = true;
-        for(int tar : arr[num]) {
-            if(!visited[tar]) {
-                visited[tar] = true;
-                
+    // BFS로 이분 그래프 판별
+    static boolean bfs(int start) {
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.offer(start);
+        visited[start] = true;
+        team[start] = true;  // 시작 정점의 팀을 true로 설정
+
+        while(!queue.isEmpty()) {
+            int current = queue.poll();
+            
+            for(int next : arr[current]) {
+                if(!visited[next]) {
+                    visited[next] = true;
+                    team[next] = !team[current];  // 현재 정점과 반대 팀으로 설정
+                    queue.offer(next);
+                }
+                // 이미 방문한 정점인 경우, 같은 팀에 속해있다면 불가능
+                else if(team[next] == team[current]) {
+                    return false;
+                }
             }
         }
+        return true;
     }
 }
+
