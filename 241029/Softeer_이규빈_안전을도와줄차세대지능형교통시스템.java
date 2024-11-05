@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 // 실행 시간 170 ms 메모리 21.04 MB
-
 public class Softeer_이규빈_안전을도와줄차세대지능형교통시스템 {
     static int N, T;
     static final int[] dx = {0, 1, 0, -1};
@@ -75,5 +74,6 @@ public class Softeer_이규빈_안전을도와줄차세대지능형교통시스�
         dic.put(12, new int[] {2, 2, 3 });
         
         return dic;
+
     }
 }
