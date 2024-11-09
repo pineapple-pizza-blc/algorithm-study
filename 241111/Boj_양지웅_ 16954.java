@@ -9,7 +9,6 @@ public class Main {
     static final int MAZE_SIZE = 8;
     static int[] dr = {1, 1, 1, -1, -1, -1, 0, 0, 0};
     static int[] dc = {0, 1, -1, 0, 1, -1, 1, -1, 0};
-
     static int escape;
 
     public static void main(String[] args) throws Exception{
@@ -38,14 +37,6 @@ public class Main {
         }
         if (visited[row][col][turn]) return;
         visited[row][col][turn] = true;
-
-        for (int d = 0; d < dr.length; d++) {
-            int nr = row + dr[d];
-            int nc = col + dc[d];
-            if (!isRange(nr, nc) || !canEscape(nr, nc, turn)) continue;
-            DFS(nr, nc, turn + 1);
-        }
-    }
 
     private static boolean isRange(int row, int col) {
         return (0 <= row && row < MAZE_SIZE && 0 <= col && col < MAZE_SIZE);
@@ -119,4 +110,4 @@ public class Main {
         && (0 <= row - 1 - turn && maze[row - 1 - turn][col] == 0));
     }
 }
-
+  
